@@ -3,3 +3,4 @@ Bituler is a schedule maker that is made by Bitula~ Since every VTuber need to e
 
 Bituler also available in https://bituler.netlify.app
 Use it now!
+<img width="1878" height="859" alt="image" src="https://github.com/user-attachments/assets/b49fefaa-ab9e-4a8f-9f10-67a84b60ef4f" />
