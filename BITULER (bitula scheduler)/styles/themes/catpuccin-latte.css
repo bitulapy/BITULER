@@ -1,0 +1,34 @@
+body.theme-catppuccin-latte {
+  --bg-color: #292c3c;
+  --panel-bg: #292c3c;
+  --neon-cyan: #e78284;
+  --neon-pink: #ca9ee6;
+  --neon-yellow: #e5c890;
+  --text-main: #a6d189;
+  --text-muted: #7f8c8d;
+  --grid-color: rgba(44, 62, 80, 0.05);
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --box-bg: #414559;
+  --box-border: rgba(44, 62, 80, 0.1);
+}
+body[class="theme-catppuccin-latte"] .glitch {
+  text-shadow: unset !important;
+  color: #f4b8e4;
+}
+body[class="theme-catppuccin-latte"] #scheduleList .is-rest .day-info {
+  border-color: #ea999c !important;
+  background: #ea999c !important;
+}
+body[class="theme-catppuccin-latte"] #scheduleList .is-rest .day-date,
+body[class="theme-catppuccin-latte"] #scheduleList .is-rest .day-name {
+  color: #292c3c !important;
+  font-weight: 600 !important;
+}
+
+body[class="theme-catppuccin-latte"] #scheduleList .is-rest .activity-info {
+  border-color: #e78284 !important;
+  background: #e78284 !important;
+  color: #232634 !important;
+  font-weight: 700 !important;
+}
