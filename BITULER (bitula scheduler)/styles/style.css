@@ -44,21 +44,6 @@ body.theme-neutral {
   --box-border: rgba(44, 62, 80, 0.1);
 }
 
-body.theme-catppuccin-latte {
-  --bg-color: #292c3c;
-  --panel-bg: #303446;
-  --neon-cyan: #e78284;
-  --neon-pink: #ca9ee6;
-  --neon-yellow: #e5c890;
-  --text-main: #a6d189;
-  --text-muted: #7f8c8d;
-  --grid-color: rgba(44, 62, 80, 0.05);
-  --font-heading: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --box-bg: #51576d;
-  --box-border: rgba(44, 62, 80, 0.1);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
