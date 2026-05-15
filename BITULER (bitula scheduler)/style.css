@@ -1628,3 +1628,236 @@ body.theme-lunar .schedule-footer p {
     letter-spacing: 2px;
     font-size: 1.2rem;
 }
+
+
+/* =========================================
+   THEME: CRIMSON
+   ========================================= */
+body.theme-crimson {
+  --bg-color: #1a161b;
+  --panel-bg: #141115;
+  --main-color: #d92546; 
+  --secondary-color: #ffffff;
+  --tertiary-color: #ff4d6d;
+  --text-main: #ffffff;
+  --text-muted: #888888;
+  --grid-color: rgba(217, 37, 70, 0.05);
+  
+  --font-heading: "Playfair Display", "Orbitron", serif; 
+  --font-body: "Quicksand", sans-serif;
+  
+  --box-bg: rgba(30, 25, 32, 0.85);
+  --box-border: rgba(217, 37, 70, 0.3);
+}
+
+body.theme-crimson .cyber-bracket,
+body.theme-crimson .scanlines,
+body.theme-crimson .day-row::before,
+body.theme-crimson .day-row::after,
+body.theme-crimson .global-settings::before,
+body.theme-crimson .global-settings::after,
+body.theme-crimson .schedule-footer,
+body.theme-crimson .avatar-decorations,
+body.theme-crimson .decor-box {
+  display: none !important;
+}
+
+body.theme-crimson .avatar-placeholder {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+/* HAPUS GARIS BAWAH HEADER */
+body.theme-crimson .schedule-header {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* HEADER */
+body.theme-crimson .header-titles {
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+body.theme-crimson .schedule-header h2 {
+  font-size: 6.5rem;
+  font-family: var(--font-heading) !important;
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.8) !important;
+  color: white;
+  letter-spacing: 5px;
+  line-height: 0.9;
+}
+
+body.theme-crimson .schedule-header h2::first-letter {
+  color: var(--main-color);
+}
+
+/* NAMA CHANNEL */
+body.theme-crimson .channel-name {
+  font-size: 1.8rem;
+  font-family: var(--font-heading) !important;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 2px;
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+/* TANGGAL DI KANAN ATAS */
+body.theme-crimson .date-range-box {
+  position: absolute;
+  top: 80px;
+  right: 80px;
+  z-index: 30;
+  font-size: 1.5rem;
+  color: white;
+  font-family: var(--font-heading) !important;
+  text-transform: lowercase;
+  opacity: 0.8;
+}
+
+/* POSISI */
+body.theme-crimson .schedule-body {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* AVATAR */
+body.theme-crimson .avatar-area {
+  width: 800px;
+  height: 100%;
+  bottom: 150px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+body.theme-crimson #avatarPreview {
+  width: 100%;
+  height: 110%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* LIST */
+body.theme-crimson .schedule-list {
+  flex: 0 0 55%;
+  max-width: 55%;
+  margin-left: auto;
+  z-index: 10;
+  justify-content: flex-start;
+  padding-top: 140px;
+  gap: 15px; 
+}
+
+/* KOTAKAN SKEJUL */
+body.theme-crimson .day-row {
+  background: var(--box-bg);
+  border: none;
+  border-radius: 0;
+  clip-path: polygon(25px 0, 100% 0, calc(100% - 25px) 100%, 0 100%);
+  height: 75px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+
+/* TANGGAL PERHARI */
+body.theme-crimson .day-info {
+  background: var(--main-color);
+  width: 170px;
+  height: 100%;
+  border-right: none;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 25px) 100%, 0% 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  order: 1; 
+}
+
+/* NAMA HARI */
+body.theme-crimson .day-name {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.8);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+}
+
+body.theme-crimson .day-date {
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ACTIVITY */
+body.theme-crimson .activity-info {
+  flex: 1;
+  font-size: 1.5rem;
+  font-family: serif !important;
+  text-transform: none; 
+  padding-left: 20px;
+  order: 2;
+}
+
+/* INI JAM */
+body.theme-crimson .time-info {
+  background: rgba(255,255,255,0.9);
+  color: #1a161b;
+  border: none;
+  border-radius: 30px;
+  height: 40px;
+  width: 140px;
+  font-size: 1.2rem;
+  font-family: serif !important;
+  font-weight: 800;
+  margin-right: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 3;
+}
+
+/* WARNA WARNI DUNIA */
+body.theme-crimson .day-row:nth-child(even) {
+  background: linear-gradient(90deg, rgba(217, 37, 70, 0.4), var(--box-bg));
+}
+
+body.theme-crimson .day-row:nth-child(even) .day-info {
+  background: #ffffff;
+}
+
+body.theme-crimson .day-row:nth-child(even) .day-date {
+  color: var(--main-color);
+}
+body.theme-crimson .day-row:nth-child(even) .day-name {
+  color: #1a161b;
+}
+
+/* TAMPILAN HARI LIBUR (REST DAY) */
+body.theme-crimson .day-row.is-rest {
+  background: rgba(217, 37, 70, 0.15);
+}
+body.theme-crimson .day-row.is-rest .activity-info {
+  color: var(--main-color);
+  text-align: center;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 30px;
+}
