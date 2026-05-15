@@ -2,9 +2,9 @@
 body.theme-cyberpunk {
   --bg-color: #0b0c16;
   --panel-bg: #151728;
-  --neon-cyan: #dfb773;
-  --neon-pink: #d94b79;
-  --neon-yellow: #f4dca6;
+  --main-color: #dfb773;
+  --secondary-color: #d94b79;
+  --tertiary-color: #f4dca6;
   --text-main: #ffffff;
   --text-muted: #a3a7c6;
   --grid-color: rgba(223, 183, 115, 0.1);
@@ -17,9 +17,9 @@ body.theme-cyberpunk {
 body.theme-cute {
   --bg-color: #fff0f5;
   --panel-bg: #ffe4e1;
-  --neon-cyan: #a1c4fd;
-  --neon-pink: #ffb7b2;
-  --neon-yellow: #ff9a9e;
+  --main-color: #a1c4fd;
+  --secondary-color: #ffb7b2;
+  --tertiary-color: #ff9a9e;
   --text-main: #5c4a5c;
   --text-muted: #9b8c9b;
   --grid-color: rgba(255, 183, 178, 0.3);
@@ -32,9 +32,9 @@ body.theme-cute {
 body.theme-neutral {
   --bg-color: #f5f5f5;
   --panel-bg: #ffffff;
-  --neon-cyan: #2c3e50;
-  --neon-pink: #1a252f;
-  --neon-yellow: #34495e;
+  --main-color: #2c3e50;
+  --secondary-color: #1a252f;
+  --tertiary-color: #34495e;
   --text-main: #2c3e50;
   --text-muted: #7f8c8d;
   --grid-color: rgba(44, 62, 80, 0.05);
@@ -85,7 +85,7 @@ h6,
 .input-panel {
   width: 400px;
   background-color: var(--panel-bg);
-  border-right: 2px solid var(--neon-cyan);
+  border-right: 2px solid var(--main-color);
   padding: 30px;
   overflow-y: auto;
   display: flex;
@@ -119,13 +119,13 @@ h6,
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--neon-cyan);
+  background: var(--main-color);
 }
 
 /* Header Typography */
 .header-title h1 {
   font-size: 2.5rem;
-  color: var(--neon-yellow);
+  color: var(--tertiary-color);
   text-shadow: 0 0 10px rgba(252, 238, 10, 0.5);
   margin-bottom: 5px;
   letter-spacing: 2px;
@@ -133,19 +133,19 @@ h6,
 
 .header-title .version {
   font-size: 1rem;
-  color: var(--neon-cyan);
+  color: var(--main-color);
   vertical-align: super;
 }
 
 .header-title p {
-  color: var(--neon-pink);
+  color: var(--secondary-color);
   font-weight: 600;
   letter-spacing: 1px;
 }
 
 /* Forms */
 .global-settings {
-  border: 1px solid var(--neon-cyan);
+  border: 1px solid var(--main-color);
   padding: 15px;
   position: relative;
 }
@@ -157,8 +157,8 @@ h6,
   left: -1px;
   width: 10px;
   height: 10px;
-  border-top: 2px solid var(--neon-yellow);
-  border-left: 2px solid var(--neon-yellow);
+  border-top: 2px solid var(--tertiary-color);
+  border-left: 2px solid var(--tertiary-color);
 }
 
 .global-settings::after {
@@ -168,8 +168,8 @@ h6,
   right: -1px;
   width: 10px;
   height: 10px;
-  border-bottom: 2px solid var(--neon-yellow);
-  border-right: 2px solid var(--neon-yellow);
+  border-bottom: 2px solid var(--tertiary-color);
+  border-right: 2px solid var(--tertiary-color);
 }
 
 .form-group {
@@ -186,7 +186,7 @@ h6,
 .form-group label {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--neon-cyan);
+  color: var(--main-color);
   letter-spacing: 1px;
 }
 
@@ -220,7 +220,7 @@ body.theme-neutral select {
 input[type="text"]:focus,
 input[type="date"]:focus,
 input[type="time"]:focus {
-  border-color: var(--neon-pink);
+  border-color: var(--secondary-color);
   box-shadow: 0 0 8px rgba(255, 0, 60, 0.4);
 }
 
@@ -231,8 +231,8 @@ input[type="file"] {
 
 input[type="file"]::file-selector-button {
   background: transparent;
-  border: 1px solid var(--neon-cyan);
-  color: var(--neon-cyan);
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
   padding: 5px 10px;
   cursor: pointer;
   font-family: var(--font-body);
@@ -247,14 +247,14 @@ body.theme-neutral input[type="file"]::file-selector-button {
 }
 
 input[type="file"]::file-selector-button:hover {
-  background: var(--neon-cyan);
+  background: var(--main-color);
   color: black;
 }
 
 /* Day Item Input */
 .day-item-input {
   background: rgba(255, 255, 255, 0.03);
-  border-left: 3px solid var(--neon-cyan);
+  border-left: 3px solid var(--main-color);
   padding: 15px;
   margin-bottom: 15px;
   position: relative;
@@ -276,7 +276,7 @@ input[type="file"]::file-selector-button:hover {
 
 .day-item-name {
   font-family: "Orbitron", sans-serif;
-  color: var(--neon-yellow);
+  color: var(--tertiary-color);
   font-size: 1.1rem;
 }
 
@@ -294,7 +294,7 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .off-day-toggle input {
-  accent-color: var(--neon-pink);
+  accent-color: var(--secondary-color);
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -302,15 +302,15 @@ input[type="file"]::file-selector-button:hover {
 
 .off-day-toggle span {
   font-size: 0.9rem;
-  color: var(--neon-pink);
+  color: var(--secondary-color);
   font-weight: 600;
 }
 
 /* Button */
 .cyber-btn {
   background: transparent;
-  border: 2px solid var(--neon-pink);
-  color: var(--neon-pink);
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
   padding: 20px 20px;
   font-size: 1rem;
   cursor: pointer;
@@ -323,9 +323,9 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .cyber-btn:hover {
-  background: var(--neon-pink);
+  background: var(--secondary-color);
   color: var(--bg-color);
-  box-shadow: 0 0 20px var(--neon-pink);
+  box-shadow: 0 0 20px var(--secondary-color);
 }
 
 /* CANVAS (The output that will be downloaded) */
@@ -390,7 +390,7 @@ input[type="file"]::file-selector-button:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 4px solid var(--neon-cyan);
+  border-bottom: 4px solid var(--main-color);
   padding-bottom: 20px;
   margin-bottom: 40px;
 }
@@ -399,8 +399,8 @@ input[type="file"]::file-selector-button:hover {
   font-size: 5rem;
   color: var(--text-main);
   text-shadow:
-    3px 3px 0 var(--neon-pink),
-    -3px -3px 0 var(--neon-cyan);
+    3px 3px 0 var(--secondary-color),
+    -3px -3px 0 var(--main-color);
   letter-spacing: 5px;
   margin: 0;
   line-height: 1;
@@ -408,7 +408,7 @@ input[type="file"]::file-selector-button:hover {
 
 .channel-name {
   font-size: 2rem;
-  color: var(--neon-cyan);
+  color: var(--main-color);
   font-family: var(--font-heading);
   letter-spacing: 3px;
   margin-top: 15px;
@@ -417,7 +417,7 @@ input[type="file"]::file-selector-button:hover {
 
 .date-range-box {
   font-size: 2rem;
-  color: var(--neon-yellow);
+  color: var(--tertiary-color);
   font-family: "Orbitron", sans-serif;
   display: flex;
   gap: 15px;
@@ -425,7 +425,7 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .cyber-bracket {
-  color: var(--neon-cyan);
+  color: var(--main-color);
 }
 
 /* Main Body Schedule */
@@ -462,8 +462,8 @@ input[type="file"]::file-selector-button:hover {
   left: -2px;
   width: 20px;
   height: 20px;
-  border-top: 3px solid var(--neon-cyan);
-  border-left: 3px solid var(--neon-cyan);
+  border-top: 3px solid var(--main-color);
+  border-left: 3px solid var(--main-color);
 }
 
 .day-row::after {
@@ -473,15 +473,15 @@ input[type="file"]::file-selector-button:hover {
   right: -2px;
   width: 20px;
   height: 20px;
-  border-bottom: 3px solid var(--neon-cyan);
-  border-right: 3px solid var(--neon-cyan);
+  border-bottom: 3px solid var(--main-color);
+  border-right: 3px solid var(--main-color);
 }
 
 .day-info {
   width: 250px;
   height: 100%;
   background: var(--box-bg);
-  border-right: 2px solid var(--neon-cyan);
+  border-right: 2px solid var(--main-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -491,7 +491,7 @@ input[type="file"]::file-selector-button:hover {
 
 .day-name {
   font-size: 2.2rem;
-  color: var(--neon-yellow);
+  color: var(--tertiary-color);
   letter-spacing: 2px;
   line-height: 1;
 }
@@ -510,7 +510,7 @@ input[type="file"]::file-selector-button:hover {
   align-items: center;
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--neon-pink);
+  color: var(--secondary-color);
   border-right: 2px dashed var(--box-border);
   font-family: var(--font-heading);
 }
@@ -538,7 +538,7 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .day-row.is-rest .activity-info {
-  color: var(--neon-pink);
+  color: var(--secondary-color);
   font-style: italic;
   letter-spacing: 5px;
 }
@@ -550,19 +550,19 @@ input[type="file"]::file-selector-button:hover {
 
 .day-row.is-rest .day-info {
   background: rgba(255, 0, 60, 0.1);
-  border-right-color: var(--neon-pink);
+  border-right-color: var(--secondary-color);
 }
 
 .day-row.is-rest .day-name {
-  color: var(--neon-pink);
+  color: var(--secondary-color);
 }
 
 .day-row.is-rest::before {
-  border-color: var(--neon-pink);
+  border-color: var(--secondary-color);
 }
 
 .day-row.is-rest::after {
-  border-color: var(--neon-pink);
+  border-color: var(--secondary-color);
 }
 
 /* Avatar Area */
@@ -614,7 +614,7 @@ input[type="file"]::file-selector-button:hover {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: var(--neon-yellow);
+  background: var(--tertiary-color);
   color: black;
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
@@ -634,7 +634,7 @@ input[type="file"]::file-selector-button:hover {
 
 .schedule-footer p {
   font-family: "Orbitron", sans-serif;
-  color: var(--neon-cyan);
+  color: var(--main-color);
   font-size: 1.2rem;
   letter-spacing: 3px;
 }

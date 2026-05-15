@@ -1,9 +1,9 @@
 body.theme-catppuccin-latte {
   --bg-color: #292c3c;
   --panel-bg: #292c3c;
-  --neon-cyan: #e78284;
-  --neon-pink: #ca9ee6;
-  --neon-yellow: #e5c890;
+  --main-color: #e78284;
+  --secondary-color: #ca9ee6;
+  --tertiary-color: #e5c890;
   --text-main: #a6d189;
   --text-muted: #7f8c8d;
   --grid-color: rgba(44, 62, 80, 0.05);
@@ -27,8 +27,12 @@ body[class="theme-catppuccin-latte"] #scheduleList .is-rest .day-name {
 }
 
 body[class="theme-catppuccin-latte"] #scheduleList .is-rest .activity-info {
-  border-color: #e78284 !important;
-  background: #e78284 !important;
+  border-color: var(--main-color) !important;
+  background: var(--main-color) !important;
   color: #232634 !important;
   font-weight: 700 !important;
+}
+body[class="theme-catppuccin-latte"] .schedule-footer p::after {
+  content: "|| Theme By DekReza";
+  margin-left: 10px;
 }
