@@ -1,138 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bituler - VTuber Schedule Generator</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Fredoka:wght@400;600&family=Quicksand:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/themes/catpuccin-latte.css" />
-    <link rel="stylesheet" href="styles/themes/synthwave.css" />
-  </head>
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Fredoka:wght@400;600&family=Quicksand:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
+<body>
     <div class="app-container">
-      <!-- Panel Kiri: Form Input -->
-      <div class="input-panel">
-        <div class="header-title">
-          <h1>BITULER <span class="version">v1.0</span></h1>
-          <p>BITULA'S WEEKLY SCHEDULE MAKER</p>
-        </div>
-
-        <div class="global-settings">
-          <div class="form-group">
-            <label>THEME STYLE</label>
-            <select id="themeSelector">
-              <option value="cyberpunk">Cyberpunk (Bitula)</option>
-              <option value="cute">Cute Coquette</option>
-              <option value="neutral">Netral Minimalist</option>
-              <option value="catppuccin-latte">Catppuccin Latte</option>
-              <option value="synthwave">Synthwave</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>CHANNEL (YT/TWITCH)</label>
-            <input
-              type="text"
-              id="channelInput"
-              placeholder="ex: YT @bitulapy"
-            />
-          </div>
-          <div class="form-group">
-            <label>YOUR MODEL / PICT</label>
-            <input type="file" id="avatarUpload" accept="image/*" />
-          </div>
-          <div class="form-group">
-            <label
-              ><i class="fa-solid fa-calendar-days"></i> START DATE (MON)</label
-            >
-            <input type="date" id="startDate" />
-          </div>
-        </div>
-
-        <div class="days-container" id="daysContainer">
-          <!-- Di-generate lewat JavaScript -->
-        </div>
-
-        <button id="downloadBtn" class="cyber-btn">
-          <span class="btn-text">DOWNLOAD SCHEDULE</span>
-          <span class="btn-glitch"></span>
-        </button>
-      </div>
-
-      <!-- Panel Kanan: Preview Canvas -->
-      <div class="preview-panel">
-        <div class="preview-wrapper">
-          <!-- Elemen ini yang akan di-screenshot/download -->
-          <div id="scheduleCanvas" class="schedule-canvas">
-            <div class="cyber-grid"></div>
-            <div class="scanlines"></div>
-
-            <div class="canvas-content">
-              <header class="schedule-header">
-                <div class="header-titles">
-                  <h2 class="glitch" data-text="WEEKLY SCHEDULE">
-                    WEEKLY SCHEDULE
-                  </h2>
-                  <div class="channel-name" id="channelNameDisplay">
-                    YOUR CHANNEL
-                  </div>
-                </div>
-                <div class="date-range-box">
-                  <span class="cyber-bracket">[</span>
-                  <i
-                    class="fa-solid fa-calendar-days"
-                    style="
-                      color: var(--neon-pink);
-                      font-size: 1.5rem;
-                      margin-right: 5px;
-                    "
-                  ></i>
-                  <span id="dateRangeDisplay">SELECT START DATE</span>
-                  <span class="cyber-bracket">]</span>
-                </div>
-              </header>
-
-              <main class="schedule-body">
-                <div class="schedule-list" id="scheduleList">
-                  <!-- Di-generate lewat JavaScript -->
-                </div>
-
-                <div class="avatar-area">
-                  <div class="avatar-placeholder" id="avatarPlaceholder">
-                    <div class="placeholder-text">NO MODEL<br />UPLOADED</div>
-                  </div>
-                  <img
-                    id="avatarPreview"
-                    src=""
-                    alt="VTuber Model"
-                    style="display: none"
-                  />
-                  <div class="avatar-decorations">
-                    <div class="decor-line"></div>
-                    <div class="decor-box">SYS.ONLINE</div>
-                  </div>
-                </div>
-              </main>
-
-              <footer class="schedule-footer">
-                <p>POWERED BY BITULER OS X/TWITTER @bitulapy</p>
-                <div class="barcode"></div>
-              </footer>
+        <!-- Panel Kiri: Form Input -->
+        <div class="input-panel">
+            <div class="header-title">
+                <h1>BITULER <span class="version">v1.0</span></h1>
+                <p>BITULA'S WEEKLY SCHEDULE MAKER</p>
             </div>
-          </div>
+
+            <div class="global-settings">
+                <div class="form-group">
+                    <label>THEME STYLE</label>
+                    <select id="themeSelector">
+                        <option value="cyberpunk">Cyberpunk (Bitula)</option>
+                        <option value="cute">Cute Coquette</option>
+                        <option value="neutral">Netral Minimalist</option>
+                        <option value="japan">Brave Red</option>
+                        <option value="synthwave">Synthwave</option>
+                        <option value="catppuccin-latte">Catppuccin Latte</option>
+                        <option value="lunar">Fortune Teller</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>CHANNEL (YT/TWITCH)</label>
+                    <input type="text" id="channelInput" placeholder="ex: YT @bitulapy">
+                </div>
+                <div class="form-group">
+                    <label>YOUR MODEL / PICT</label>
+                    <input type="file" id="avatarUpload" accept="image/*">
+                </div>
+                <div class="form-group zoom-control-group" id="zoomControlGroup">
+                    <label>IMAGE ZOOM</label>
+                    <div class="zoom-control">
+                        <button type="button" class="zoom-btn" id="zoomOut">−</button>
+                        <input type="range" id="zoomSlider" min="50" max="250" value="100" step="5">
+                        <button type="button" class="zoom-btn" id="zoomIn">+</button>
+                        <span class="zoom-label" id="zoomValue">100%</span>
+                    </div>
+                    <label style="margin-top:10px;display:block;">↔ HORIZONTAL</label>
+                    <div class="zoom-control">
+                        <button type="button" class="zoom-btn" id="panLeft">←</button>
+                        <input type="range" id="panXSlider" min="-600" max="600" value="0" step="10">
+                        <button type="button" class="zoom-btn" id="panRight">→</button>
+                    </div>
+                    <label style="margin-top:6px;display:block;">↕ VERTICAL</label>
+                    <div class="zoom-control">
+                        <button type="button" class="zoom-btn" id="panDown">↓</button>
+                        <input type="range" id="panYSlider" min="-600" max="600" value="0" step="10">
+                        <button type="button" class="zoom-btn" id="panUp">↑</button>
+                    </div>
+                    <p style="font-size:0.75rem;color:var(--text-muted);margin-top:6px;">💡 Drag gambar di preview untuk reposisi</p>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-days"></i> START DATE (MON)</label>
+                    <input type="date" id="startDate">
+                </div>
+            </div>
+
+            <div class="days-container" id="daysContainer">
+                <!-- Di-generate lewat JavaScript -->
+            </div>
+
+            <button id="downloadBtn" class="cyber-btn">
+                <span class="btn-text">DOWNLOAD SCHEDULE</span>
+                <span class="btn-glitch"></span>
+            </button>
         </div>
-      </div>
+
+        <!-- Panel Kanan: Preview Canvas -->
+        <div class="preview-panel">
+            <div class="preview-wrapper">
+                <!-- Elemen ini yang akan di-screenshot/download -->
+                <div id="scheduleCanvas" class="schedule-canvas">
+                    <div class="cyber-grid"></div>
+                    <div class="scanlines"></div>
+
+                    <div class="canvas-content">
+                        <header class="schedule-header">
+                            <div class="header-titles">
+                                <h2 class="glitch" data-text="WEEKLY SCHEDULE">WEEKLY SCHEDULE</h2>
+                                <div class="channel-name" id="channelNameDisplay">YOUR CHANNEL</div>
+                            </div>
+                            <div class="date-range-box">
+                                <span class="cyber-bracket">[</span>
+                                <i class="fa-solid fa-calendar-days"
+                                    style="color: var(--neon-pink); font-size: 1.5rem; margin-right: 5px;"></i>
+                                <span id="dateRangeDisplay">SELECT START DATE</span>
+                                <span class="cyber-bracket">]</span>
+                            </div>
+                        </header>
+
+                        <main class="schedule-body">
+                            <div class="schedule-list" id="scheduleList">
+                                <!-- Di-generate lewat JavaScript -->
+                            </div>
+
+                            <div class="avatar-area">
+                                <div class="avatar-placeholder" id="avatarPlaceholder">
+                                    <div class="placeholder-text">NO MODEL<br>UPLOADED</div>
+                                </div>
+                                <img id="avatarPreview" src="" alt="VTuber Model" style="display: none;">
+                                <div class="avatar-decorations">
+                                    <div class="decor-line"></div>
+                                    <div class="decor-box">SYS.ONLINE</div>
+                                </div>
+                            </div>
+                        </main>
+
+                        <footer class="schedule-footer">
+                            <p>POWERED BY BITULER OS X/TWITTER @bitulapy</p>
+                            <div class="barcode"></div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

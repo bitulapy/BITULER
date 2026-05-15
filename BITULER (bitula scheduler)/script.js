@@ -127,6 +127,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Image controls ---
+    const zoomControlGroup = document.getElementById('zoomControlGroup');
+    const zoomSlider  = document.getElementById('zoomSlider');
+    const zoomValue   = document.getElementById('zoomValue');
+    const zoomInBtn   = document.getElementById('zoomIn');
+    const zoomOutBtn  = document.getElementById('zoomOut');
+    const panXSlider  = document.getElementById('panXSlider');
+    const panYSlider  = document.getElementById('panYSlider');
+    const panLeftBtn  = document.getElementById('panLeft');
+    const panRightBtn = document.getElementById('panRight');
+    const panUpBtn    = document.getElementById('panUp');
+    const panDownBtn  = document.getElementById('panDown');
+    const avatarArea  = document.querySelector('.avatar-area');
+
+    // Canvas scale factor (must match CSS transform: scale(0.45))
+    const CANVAS_SCALE = 0.45;
+
+    let currentZoom = 100;
+    let offsetX = 0; // horizontal offset from center (canvas px)
+    let offsetY = 0; // vertical offset from bottom   (canvas px, positive = up)
+
+    // Apply calculated position + size to the img element
+    const applyAvatarTransform = () => {
+        if (!avatarPreview.naturalWidth) return;
+
+        const areaW = avatarArea.clientWidth  || 500;
+        const areaH = avatarArea.clientHeight || 500;
+        const imgW  = avatarPreview.naturalWidth;
+        const imgH  = avatarPreview.naturalHeight;
+
+        // Fit-to-contain base scale, then multiply by zoom
+        const baseScale  = Math.min(areaW / imgW, areaH / imgH);
+        const finalScale = baseScale * (currentZoom / 100);
+        const pxW = imgW * finalScale;
+        const pxH = imgH * finalScale;
+
+        // Symmetric horizontal centering + user offset
+        const centerLeft = (areaW - pxW) / 2;
+        avatarPreview.style.width  = pxW + 'px';
+        avatarPreview.style.height = pxH + 'px';
+        avatarPreview.style.left   = (centerLeft + offsetX) + 'px';
+        avatarPreview.style.bottom = offsetY + 'px';
+        avatarPreview.style.right  = 'auto';
+    };
+
+    const applyZoom = (zoom) => {
+        currentZoom = Math.min(250, Math.max(50, zoom));
+        zoomSlider.value = currentZoom;
+        zoomValue.textContent = `${currentZoom}%`;
+        applyAvatarTransform();
+    };
+
+    const applyPan = (dx, dy) => {
+        offsetX = Math.max(-800, Math.min(800, offsetX + dx));
+        offsetY = Math.max(-800, Math.min(800, offsetY + dy));
+        panXSlider.value = offsetX;
+        panYSlider.value = offsetY;
+        applyAvatarTransform();
+    };
+
     // Event Listener: Upload Avatar
     avatarUpload.addEventListener('change', (e) => {
         const file = e.target.files[0];
@@ -134,10 +194,66 @@ document.addEventListener('DOMContentLoaded', () => {
             const reader = new FileReader();
             reader.onload = (event) => {
                 avatarPreview.src = event.target.result;
-                avatarPreview.style.display = 'block';
-                avatarPlaceholder.style.display = 'none';
+                avatarPreview.onload = () => {
+                    avatarPreview.style.display = 'block';
+                    avatarPlaceholder.style.display = 'none';
+                    zoomControlGroup.classList.add('visible');
+                    // Reset position & zoom on new image
+                    offsetX = 0; offsetY = 0;
+                    panXSlider.value = 0;
+                    panYSlider.value = 0;
+                    applyZoom(100);
+                };
             };
             reader.readAsDataURL(file);
+        }
+    });
+
+    // Zoom slider & buttons
+    zoomSlider.addEventListener('input',  () => applyZoom(parseInt(zoomSlider.value)));
+    zoomInBtn.addEventListener('click',   () => applyZoom(currentZoom + 10));
+    zoomOutBtn.addEventListener('click',  () => applyZoom(currentZoom - 10));
+
+    // Pan sliders
+    panXSlider.addEventListener('input', () => { offsetX = parseInt(panXSlider.value); applyAvatarTransform(); });
+    panYSlider.addEventListener('input', () => { offsetY = parseInt(panYSlider.value); applyAvatarTransform(); });
+
+    // Pan arrow buttons (20px step)
+    panLeftBtn.addEventListener('click',  () => applyPan(-20, 0));
+    panRightBtn.addEventListener('click', () => applyPan( 20, 0));
+    panUpBtn.addEventListener('click',    () => applyPan(0,  20));
+    panDownBtn.addEventListener('click',  () => applyPan(0, -20));
+
+    // Drag to reposition (mouse)
+    let isDragging = false, dragStartX = 0, dragStartY = 0, dragStartOffsetX = 0, dragStartOffsetY = 0;
+
+    avatarPreview.addEventListener('mousedown', (e) => {
+        if (avatarPreview.style.display === 'none') return;
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        dragStartOffsetX = offsetX;
+        dragStartOffsetY = offsetY;
+        avatarPreview.classList.add('is-dragging');
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        // Divide by CANVAS_SCALE to convert screen px → canvas px
+        const dx = (e.clientX - dragStartX) / CANVAS_SCALE;
+        const dy = (e.clientY - dragStartY) / CANVAS_SCALE;
+        offsetX = dragStartOffsetX + dx;
+        offsetY = dragStartOffsetY - dy; // invert Y: drag up → image moves up
+        panXSlider.value = Math.round(offsetX);
+        panYSlider.value = Math.round(offsetY);
+        applyAvatarTransform();
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            avatarPreview.classList.remove('is-dragging');
         }
     });
 
