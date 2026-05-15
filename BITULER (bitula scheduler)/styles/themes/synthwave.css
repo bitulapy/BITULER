@@ -46,6 +46,7 @@ body[class="theme-synthwave"] .header-titles h2 {
   position: relative;
   overflow: visible;
 }
+/* select the element only in synthwave theme */
 body[class="theme-synthwave"] #scheduleList .is-rest .day-info {
   border-color: #ea999c !important;
   background: #ea999c !important;

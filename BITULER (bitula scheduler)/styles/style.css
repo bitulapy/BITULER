@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Shojumaru&family=Cinzel+Decorative:wght@400;700&family=Raleway:wght@300;400;500;600;700&display=swap");
+
 :root,
 body.theme-cyberpunk {
   --bg-color: #0b0c16;
@@ -249,6 +251,64 @@ body.theme-neutral input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
   background: var(--main-color);
   color: black;
+}
+
+/* Zoom Control */
+.zoom-control-group {
+  display: none; /* hidden until image is uploaded */
+}
+
+.zoom-control-group.visible {
+  display: block;
+}
+
+.zoom-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.zoom-control input[type="range"] {
+  flex: 1;
+  accent-color: var(--main-color);
+  height: 4px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.rotate-btn,
+.zoom-btn {
+  background: transparent;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  font-family: var(--font-body);
+  padding: 0;
+  flex-shrink: 0;
+}
+.rotate-btn:hover,
+.zoom-btn:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.zoom-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-width: 38px;
+  text-align: right;
+  font-family: var(--font-body);
 }
 
 /* Day Item Input */
@@ -573,6 +633,10 @@ input[type="file"]::file-selector-button:hover {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  z-index: -1000000 !important;
+}
+.scheduleList {
+  z-index: 1000000 !important;
 }
 
 .avatar-placeholder {
@@ -590,14 +654,16 @@ input[type="file"]::file-selector-button:hover {
 }
 
 #avatarPreview {
-  width: 100%;
-  height: 110%;
-  /* Makes avatar pop out slightly */
-  object-fit: contain;
-  object-position: bottom;
-  z-index: 10;
+  /* Width, height, left, bottom all set by JS */
   position: absolute;
-  bottom: 0;
+  object-fit: fill;
+  z-index: 10;
+  cursor: grab;
+  user-select: none;
+}
+
+#avatarPreview.is-dragging {
+  cursor: grabbing;
 }
 
 .avatar-decorations {
