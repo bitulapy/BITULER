@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="styles/themes/synthwave.css" />
     <link rel="stylesheet" href="styles/themes/brave-red.css" />
     <link rel="stylesheet" href="styles/themes/lunar.css" />
-
-    <link id="theme-link" rel="stylesheet" href="" />
+    <link rel="stylesheet" href="styles/themes/crimson.css" />
   </head>
 
   <body>
@@ -26,26 +25,23 @@
       <!-- Panel Kiri: Form Input -->
       <div class="input-panel">
         <div class="header-title">
-          <h1>BITULER <span class="version">v1.4</span></h1>
+          <h1>BITULER <span class="version">v1.3</span></h1>
           <p>BITULA'S WEEKLY SCHEDULE MAKER</p>
         </div>
 
         <div class="global-settings">
           <div class="form-group">
             <label>THEME STYLE</label>
-            <div class="form-group custom-select-wrapper">
-              <input
-                type="text"
-                id="themeSearch"
-                placeholder="Search themes..."
-                autocomplete="off"
-              />
-              <ul
-                id="themeResults"
-                class="theme-list"
-                style="display: none"
-              ></ul>
-            </div>
+            <select id="themeSelector">
+              <option value="cyberpunk">Cyberpunk (Bitula)</option>
+              <option value="cute">Cute Coquette</option>
+              <option value="neutral">Netral Minimalist</option>
+              <option value="catppuccin-latte">Catppuccin Latte</option>
+              <option value="synthwave">Synthwave</option>
+              <option value="japan">Brave Red</option>
+              <option value="lunar">Fortune Teller</option>
+              <option value="crimson">Crimson</option>
+            </select>
           </div>
           <div class="form-group">
             <label>CHANNEL (YT/TWITCH)</label>
