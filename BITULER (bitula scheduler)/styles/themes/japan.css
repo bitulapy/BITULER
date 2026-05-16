@@ -11,6 +11,7 @@ body.theme-japan {
   /* Deep Navy Blue */
   --neon-yellow: #a1b0b6;
   /* Grey / Silver */
+  --tertiary-color: #000000;
   --text-main: #ffffff;
   --text-muted: #a1b0b6;
   --grid-color: rgba(255, 255, 255, 0.1);
@@ -466,4 +467,8 @@ body.theme-japan .header-title p {
   font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
   letter-spacing: normal;
   text-transform: none;
+}
+body.theme-japan .btn-text {
+  font-size: 14px;
+  letter-spacing: 1%;
 }

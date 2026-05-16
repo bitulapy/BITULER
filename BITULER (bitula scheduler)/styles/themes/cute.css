@@ -1,0 +1,90 @@
+body.theme-cute {
+  --bg-color: #fff0f5;
+  --panel-bg: #ffe4e1;
+  --main-color: #a1c4fd;
+  --secondary-color: #ffb7b2;
+  --tertiary-color: #ff9a9e;
+  --text-main: #5c4a5c;
+  --text-muted: #9b8c9b;
+  --grid-color: rgba(255, 183, 178, 0.3);
+  --font-heading: "Fredoka", sans-serif;
+  --font-body: "Quicksand", sans-serif;
+  --box-bg: rgba(255, 255, 255, 0.6);
+  --box-border: rgba(255, 183, 178, 0.5);
+}
+
+body.theme-cute input[type="text"],
+body.theme-cute input[type="date"],
+body.theme-cute input[type="time"],
+body.theme-cute select,
+body.theme-neutral input[type="text"],
+body.theme-neutral input[type="date"],
+body.theme-neutral input[type="time"],
+body.theme-neutral select {
+  background: var(--box-bg);
+  color: var(--text-main);
+}
+
+body.theme-cute input[type="file"]::file-selector-button {
+  color: var(--text-main);
+  border-radius: 8px;
+}
+
+/* Theme Overrides */
+body.theme-cute .cyber-bracket {
+  display: none;
+}
+
+body.theme-cute .glitch {
+  text-shadow: none !important;
+}
+
+body.theme-cute .schedule-header h2 {
+  text-shadow: none !important;
+}
+
+body.theme-cute .scanlines {
+  display: none;
+}
+
+body.theme-cute .day-row::before,
+body.theme-cute .day-row::after {
+  display: none;
+}
+
+body.theme-cute .global-settings::before,
+body.theme-cute .global-settings::after {
+  display: none;
+}
+
+body.theme-cute .barcode {
+  display: none;
+}
+
+body.theme-cute .cyber-btn {
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+body.theme-cute .day-row {
+  border-radius: 12px;
+}
+
+body.theme-cute .global-settings {
+  border-radius: 12px;
+}
+
+body.theme-cute .day-item-input {
+  border-radius: 8px;
+  border-left: none;
+  border: 1px solid var(--box-border);
+}
+
+body.theme-cute .day-info {
+  border-radius: 12px 0 0 12px;
+  border-right: 2px dashed var(--box-border);
+}
+
+body.theme-cute .time-info {
+  border-right: 2px dashed var(--box-border);
+}

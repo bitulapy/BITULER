@@ -1,0 +1,14 @@
+body.theme-cyberpunk {
+  --bg-color: #0b0c16;
+  --panel-bg: #151728;
+  --main-color: #dfb773;
+  --secondary-color: #d94b79;
+  --tertiary-color: #f4dca6;
+  --text-main: #ffffff;
+  --text-muted: #a3a7c6;
+  --grid-color: rgba(223, 183, 115, 0.1);
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+  --box-bg: rgba(223, 183, 115, 0.05);
+  --box-border: rgba(223, 183, 115, 0.2);
+}

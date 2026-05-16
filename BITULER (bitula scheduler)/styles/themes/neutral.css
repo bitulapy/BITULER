@@ -1,0 +1,82 @@
+body.theme-neutral {
+  --bg-color: #f5f5f5;
+  --panel-bg: #ffffff;
+  --main-color: #2c3e50;
+  --secondary-color: #1a252f;
+  --tertiary-color: #34495e;
+  --text-main: #2c3e50;
+  --text-muted: #7f8c8d;
+  --grid-color: rgba(44, 62, 80, 0.05);
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --box-bg: rgba(255, 255, 255, 1);
+  --box-border: rgba(44, 62, 80, 0.1);
+}
+body.theme-neutral input[type="file"]::file-selector-button {
+  color: var(--text-main);
+  border-radius: 8px;
+}
+body.theme-neutral input[type="file"]::file-selector-button {
+  color: var(--text-main);
+  border-radius: 8px;
+}
+body.theme-neutral .cyber-bracket {
+  display: none;
+}
+
+body.theme-neutral .glitch {
+  text-shadow: none !important;
+}
+
+body.theme-neutral .schedule-header h2 {
+  text-shadow: none !important;
+}
+
+body.theme-neutral .scanlines {
+  display: none;
+}
+
+body.theme-neutral .day-row::before,
+body.theme-neutral .day-row::after {
+  display: none;
+}
+
+body.theme-neutral .global-settings::before,
+body.theme-neutral .global-settings::after {
+  display: none;
+}
+
+body.theme-neutral .barcode {
+  display: none;
+}
+
+body.theme-neutral .cyber-btn {
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+body.theme-neutral .day-row {
+  border-radius: 12px;
+}
+
+body.theme-neutral .global-settings {
+  border-radius: 12px;
+}
+
+body.theme-neutral .day-item-input {
+  border-radius: 8px;
+  border-left: none;
+  border: 1px solid var(--box-border);
+}
+
+body.theme-neutral .day-info {
+  border-radius: 12px 0 0 12px;
+  border-right: 2px dashed var(--box-border);
+}
+
+body.theme-neutral .time-info {
+  border-right: 2px dashed var(--box-border);
+}
+body.theme-neutral .theme-list {
+  background: var(--panel-bg); /* Or match your site theme */
+}
