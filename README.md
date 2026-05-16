@@ -75,7 +75,3 @@ body.theme-synthwave .day-row {
 2. Drop your CSS file into `styles/themes/`.
 3. Test it by typing your theme name into the **THEME STYLE** search bar in the
    app!
-
-```
-
-```
