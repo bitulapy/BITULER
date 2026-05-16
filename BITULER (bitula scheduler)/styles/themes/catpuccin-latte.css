@@ -12,27 +12,27 @@ body.theme-catppuccin-latte {
   --box-bg: #414559;
   --box-border: rgba(44, 62, 80, 0.1);
 }
-body[class="theme-catppuccin-latte"] .glitch {
+body.theme-catppuccin-latte .glitch {
   text-shadow: unset !important;
   color: #f4b8e4;
 }
-body[class="theme-catppuccin-latte"] #scheduleList .is-rest .day-info {
+body.theme-catppuccin-latte #scheduleList .is-rest .day-info {
   border-color: #ea999c !important;
   background: #ea999c !important;
 }
-body[class="theme-catppuccin-latte"] #scheduleList .is-rest .day-date,
-body[class="theme-catppuccin-latte"] #scheduleList .is-rest .day-name {
+body.theme-catppuccin-latte #scheduleList .is-rest .day-date,
+body.theme-catppuccin-latte #scheduleList .is-rest .day-name {
   color: #292c3c !important;
   font-weight: 600 !important;
 }
 
-body[class="theme-catppuccin-latte"] #scheduleList .is-rest .activity-info {
+body.theme-catppuccin-latte #scheduleList .is-rest .activity-info {
   border-color: var(--main-color) !important;
   background: var(--main-color) !important;
   color: #232634 !important;
   font-weight: 700 !important;
 }
-body[class="theme-catppuccin-latte"] .schedule-footer p::after {
+body.theme-catppuccin-latte .schedule-footer p::after {
   content: "|| Theme By DekReza";
   margin-left: 10px;
 }
