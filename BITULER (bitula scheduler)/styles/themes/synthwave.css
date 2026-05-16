@@ -15,7 +15,7 @@ body.theme-synthwave {
   --secondary-text-color: #e48f38;
 }
 
-body[class="theme-synthwave"] .header-titles h2::after {
+body.theme-synthwave .header-titles h2::after {
   content: "WEEKLY SCHEDULE";
   width: 100%;
   height: 100%;
@@ -33,7 +33,7 @@ body[class="theme-synthwave"] .header-titles h2::after {
   background-clip: text;
   -webkit-background-clip: text;
 }
-body[class="theme-synthwave"] .header-titles h2 {
+body.theme-synthwave .header-titles h2 {
   text-shadow: unset !important;
   color: transparent;
   background: linear-gradient(
@@ -47,26 +47,26 @@ body[class="theme-synthwave"] .header-titles h2 {
   overflow: visible;
 }
 /* select the element only in synthwave theme */
-body[class="theme-synthwave"] #scheduleList .is-rest .day-info {
+body.theme-synthwave #scheduleList .is-rest .day-info {
   border-color: #ea999c !important;
   background: #ea999c !important;
 }
-body[class="theme-synthwave"] #scheduleList .is-rest .day-date,
-body[class="theme-synthwave"] #scheduleList .is-rest .day-name {
+body.theme-synthwave #scheduleList .is-rest .day-date,
+body.theme-synthwave #scheduleList .is-rest .day-name {
   color: #292c3c !important;
   font-weight: 600 !important;
 }
 
-body[class="theme-synthwave"] #scheduleList .is-rest .activity-info {
+body.theme-synthwave #scheduleList .is-rest .activity-info {
   border-color: var(--main-color) !important;
   background: var(--main-color) !important;
   color: #232634 !important;
   font-weight: 700 !important;
 }
-body[class="theme-synthwave"] #scheduleList .day-row {
+body.theme-synthwave #scheduleList .day-row {
   border: 2px solid var(--main-color);
 }
-body[class="theme-synthwave"] .schedule-footer p::after {
+body.theme-synthwave .schedule-footer p::after {
   content: "|| Theme By DekReza";
   margin-left: 10px;
 }

@@ -11,11 +11,85 @@ document.addEventListener("DOMContentLoaded", () => {
   const channelInput = document.getElementById("channelInput");
   const channelNameDisplay = document.getElementById("channelNameDisplay");
 
+  async function initThemeSystem() {
+    const searchInput = document.getElementById("themeSearch");
+    const resultsList = document.getElementById("themeResults");
+    const themeLink = document.getElementById("theme-link");
+
+    // Ensure the <link id="theme-link"> exists in your <head>
+    if (!document.getElementById("theme-link")) {
+      const link = document.createElement("link");
+      link.id = "theme-link";
+      link.rel = "stylesheet";
+      document.head.appendChild(link);
+    }
+
+    try {
+      const response = await fetch("./themes.json");
+      let themes = await response.json();
+
+      themes.sort((a, b) => a.label.localeCompare(b.label));
+
+      const renderList = (filter = "") => {
+        resultsList.innerHTML = "";
+        const filtered = themes.filter((t) =>
+          t.label.toLowerCase().includes(filter.toLowerCase()),
+        );
+
+        filtered.forEach((theme) => {
+          const li = document.createElement("li");
+          li.textContent = theme.label;
+          li.addEventListener("click", () => {
+            // 1. Update the CSS File
+            themeLink.href = `styles/themes/${theme.id}.css`;
+
+            // 2. Update the body class (important for your styles)
+            document.body.className = `theme-${theme.id}`;
+
+            searchInput.value = theme.label;
+            resultsList.style.display = "none";
+            localStorage.setItem("selectedTheme", theme.id);
+            localStorage.setItem("selectedThemeLabel", theme.label);
+          });
+          resultsList.appendChild(li);
+        });
+      };
+
+      // Handle persistence (keep theme on refresh)
+      const savedId = localStorage.getItem("selectedTheme");
+      const savedLabel = localStorage.getItem("selectedThemeLabel");
+      if (savedId) {
+        themeLink.href = `styles/themes/${savedId}.css`;
+        document.body.className = `theme-${savedId}`;
+        searchInput.value = savedLabel || "";
+      }
+
+      searchInput.addEventListener("input", (e) => {
+        resultsList.style.display = "block";
+        renderList(e.target.value);
+      });
+
+      searchInput.addEventListener("focus", () => {
+        searchInput.value = "";
+        renderList(searchInput.value);
+        resultsList.style.display = "block";
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".custom-select-wrapper")) {
+          resultsList.style.display = "none";
+        }
+      });
+    } catch (error) {
+      console.error("Error setting up themes:", error);
+    }
+  }
+
   // Theme Setup
-  document.body.className = "theme-cyberpunk";
-  themeSelector.addEventListener("change", (e) => {
-    document.body.className = `theme-${e.target.value}`;
-  });
+  // document.body.className = "theme-cyberpunk";
+  // themeSelector.addEventListener("change", (e) => {
+  //   document.body.className = `theme-${e.target.value}`;
+  // });
 
   // Default Hari
   const dayNames = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -346,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, 100);
   });
-
+  initThemeSystem();
   // Start App
   initializeDays();
 });

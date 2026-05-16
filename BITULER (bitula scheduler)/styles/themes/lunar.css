@@ -4,9 +4,9 @@
 body.theme-lunar {
   --bg-color: #0d0a1e;
   --panel-bg: #120e2b;
-  --neon-cyan: #c9a84c; /* Gold */
-  --neon-pink: #b56ecf; /* Soft purple/violet */
-  --neon-yellow: #7ecac3; /* Teal crystal */
+  --main-color: #c9a84c; /* Gold */
+  --secondary-color: #b56ecf; /* Soft purple/violet */
+  --tertiary-color: #7ecac3; /* Teal crystal */
   --text-main: #e8e4f0; /* Silver-lavender */
   --text-muted: #9b91c4; /* Muted lavender */
   --grid-color: rgba(201, 168, 76, 0.06);
