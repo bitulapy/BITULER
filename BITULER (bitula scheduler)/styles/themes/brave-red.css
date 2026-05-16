@@ -1,0 +1,469 @@
+/* =========================================
+   THEME: JAPAN MARTIAL ART (READABLE & SHARP)
+   ========================================= */
+body.theme-japan {
+  --bg-color: #8b0000;
+  /* Deep Red */
+  --panel-bg: #8b0000;
+  --neon-cyan: #ffffff;
+  /* White */
+  --neon-pink: #1c2331;
+  /* Deep Navy Blue */
+  --neon-yellow: #a1b0b6;
+  /* Grey / Silver */
+  --text-main: #ffffff;
+  --text-muted: #a1b0b6;
+  --grid-color: rgba(255, 255, 255, 0.1);
+  --font-heading: "Shojumaru", cursive, Impact;
+  --font-body: "Impact", "Arial Black", sans-serif;
+  --box-bg: rgba(28, 35, 49, 0.95);
+  --box-border: #ffffff;
+}
+
+body.theme-japan .cyber-bracket,
+body.theme-catppuccin-latte .cyber-bracket {
+  display: none !important;
+}
+
+/* Hide calendar icon specifically inside Japan scroll */
+body.theme-japan .date-range-box .fa-calendar-days i {
+  display: none !important;
+  text-shadow: none !important;
+}
+
+body.theme-japan .glitch {
+  text-shadow: none !important;
+}
+
+body.theme-catppuccin-latte .glitch {
+  text-shadow: none !important;
+}
+
+/* Japan: channel on TOP of WEEKLY SCHEDULE */
+body.theme-japan .header-titles {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 0;
+}
+
+body.theme-japan .schedule-header {
+  border-bottom: none;
+  box-shadow: none;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+  /* small positive gap - no overlap into rows */
+  position: relative;
+  z-index: 10;
+  align-items: flex-start;
+}
+
+body.theme-japan .schedule-header h2 {
+  font-size: 5.3em;
+  font-family: var(--font-heading) !important;
+  text-shadow:
+    5px 5px 0 #1c2331,
+    8px 8px 0 rgba(0, 0, 0, 0.7) !important;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin: 0;
+  line-height: 1.1;
+  position: relative;
+  z-index: 20;
+}
+
+/* Push the schedule list down so the big title doesn't cover MON */
+body.theme-japan .schedule-list {
+  padding-top: 0;
+}
+
+body.theme-catppuccin-latte .schedule-header h2 {
+  text-shadow: none !important;
+}
+
+/* Channel name: above h2, styled like a stamp/badge — 50% bigger */
+body.theme-japan .channel-name {
+  font-family: "Impact", sans-serif !important;
+  color: #ffffff;
+  background: #1c2331;
+  padding: 15px 50px;
+  display: inline-block;
+  border: 3.5px solid #ffffff;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  font-weight: 400;
+  transform: rotate(-3deg);
+  position: relative;
+  z-index: 25;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+body.theme-japan .scanlines,
+body.theme-catppuccin-latte .scanlines {
+  display: none;
+}
+
+body.theme-japan .day-row::before,
+body.theme-japan .day-row::after,
+body.theme-japan .global-settings::before,
+body.theme-japan .global-settings::after,
+body.theme-catppuccin-latte .day-row::before,
+body.theme-catppuccin-latte .day-row::after,
+body.theme-catppuccin-latte .global-settings::before,
+body.theme-catppuccin-latte .global-settings::after {
+  display: none;
+}
+
+body.theme-japan .barcode,
+body.theme-catppuccin-latte .barcode {
+  display: none;
+}
+
+body.theme-japan .cyber-btn {
+  border-radius: 0;
+  box-shadow: 5px 5px 0 #1c2331 !important;
+  background: #ffffff;
+  color: #8b0000;
+  border: 4px solid #1c2331;
+  font-family: "Impact", sans-serif;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+}
+
+body.theme-japan .cyber-btn:hover {
+  background: #1c2331;
+  color: #ffffff;
+  box-shadow: 2px 2px 0 #8b0000 !important;
+  transform: translate(3px, 3px);
+}
+
+body.theme-japan .day-row {
+  border-radius: 0;
+  border: none;
+  background: var(--box-bg);
+  clip-path: polygon(
+    30px 0,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0 30px
+  );
+  margin-bottom: 8px;
+  position: relative;
+}
+
+body.theme-japan .day-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  background: #8b0000;
+  border-left: 3px solid #ffffff;
+  display: block;
+}
+
+body.theme-japan .day-info {
+  border-radius: 0;
+  background: #1c2331;
+  border-right: 4px solid #ffffff;
+  padding: 10px;
+}
+
+body.theme-japan .time-info {
+  border-right: 4px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-family: "Impact", sans-serif;
+  text-shadow: 3px 3px 0 #000;
+  letter-spacing: 2px;
+}
+
+body.theme-japan .activity-info {
+  font-family: "Arial Black", sans-serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 3px 3px 0 #000;
+  padding-left: 30px;
+  text-transform: uppercase;
+}
+
+body.theme-japan .day-name {
+  color: #e8e9e8;
+  font-family: "Impact", sans-serif !important;
+  font-size: 3rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+body.theme-japan .day-date {
+  font-family: "Arial Black", sans-serif;
+  font-size: 1.2rem;
+  color: #a1b0b6;
+}
+
+body.theme-japan .date-range-box {
+  color: #1c2331;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 4px solid #1c2331;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  font-family: "Impact", sans-serif;
+}
+
+body.theme-japan .date-range-box > * {
+  transform: skewX(10deg);
+  display: inline-block;
+}
+
+body.theme-japan .date-range-box i {
+  color: #8b0000 !important;
+}
+
+/* Rest Day - fully transparent, readable text */
+body.theme-japan .day-row.is-rest {
+  background: rgba(0, 0, 0, 0.15);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  clip-path: none;
+}
+
+body.theme-japan .day-row.is-rest .day-info {
+  background: transparent;
+  border-right: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+body.theme-japan .day-row.is-rest .day-name {
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+body.theme-japan .day-row.is-rest .day-date {
+  color: #a1b0b6;
+}
+
+body.theme-japan .day-row.is-rest .activity-info {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: none;
+  font-style: italic;
+  letter-spacing: 5px;
+}
+
+body.theme-japan .global-settings {
+  border-radius: 0;
+  border: 4px solid #ffffff;
+  background: #1c2331;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+body.theme-japan .day-item-input {
+  border-radius: 0;
+  border-left: 8px solid #8b0000;
+  background: #1c2331;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Japan: flip layout - avatar LEFT, schedule RIGHT */
+body.theme-japan .schedule-body {
+  flex-direction: row-reverse;
+}
+
+body.theme-japan .avatar-area {
+  order: -1;
+  flex-shrink: 0;
+}
+
+/* Japan: Date range box — hanging scroll / karate belt tab */
+body.theme-japan .date-range-box {
+  /* Pull out of normal flow, hang from top-right of canvas */
+  position: absolute;
+  top: -60px;
+  /* rises into the top padding of canvas-content */
+  right: -30px;
+  /* slightly outside right content edge */
+  z-index: 50;
+
+  /* Scroll shape: tall and narrow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 145px;
+  padding: 22px 14px 45px;
+  /* extra bottom padding before the point */
+
+  /* Parchment-on-dark look */
+  background: #1c2331;
+  border: 4px solid #f0e6d2;
+  border-top: 8px solid #8b0000;
+  /* thick red rail — like a scroll rod */
+
+  /* Pointed belt-end bottom */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 28px),
+    50% 100%,
+    0 calc(100% - 28px)
+  );
+
+  font-family: "Impact", sans-serif;
+  color: #f0e6d2;
+  text-align: center;
+  letter-spacing: 2px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.55);
+  transform: none;
+}
+
+/* Decorative "knot" rivet on the red rail */
+body.theme-japan .date-range-box::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 10px;
+  background: #f0e6d2;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom tip decorative line */
+body.theme-japan .date-range-box::after {
+  content: "";
+  position: absolute;
+  bottom: 28px;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: rgba(240, 230, 210, 0.3);
+}
+
+body.theme-japan .date-range-box > * {
+  transform: none;
+  display: block;
+}
+
+body.theme-japan .date-range-box i {
+  color: #f0e6d2 !important;
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+body.theme-japan .date-range-box #dateRangeDisplay {
+  display: block;
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 1.5rem;
+  transform: none;
+  box-shadow: none;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.5;
+  color: #f0e6d2;
+}
+
+/* Japan: Background decorative art - ink circle + brush stripes */
+body.theme-japan .schedule-canvas {
+  position: relative;
+  overflow: hidden;
+}
+
+body.theme-japan .schedule-canvas::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 40px solid rgba(255, 255, 255, 0.06);
+  z-index: 1;
+  pointer-events: none;
+}
+
+body.theme-japan .schedule-canvas::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 60px solid rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+body.theme-japan .cyber-grid {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 79px,
+      rgba(255, 255, 255, 0.04) 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 79px,
+      rgba(255, 255, 255, 0.04) 80px
+    ),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.25) 0%, transparent 60%);
+  background-size:
+    80px 80px,
+    80px 80px,
+    100% 100%;
+}
+
+/* Japan: Diagonal red brush stripe accent (top-left corner) */
+body.theme-japan .canvas-content::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 220px;
+  height: 30px;
+  background: rgba(139, 0, 0, 0.7);
+  transform: rotate(-8deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body.theme-japan .canvas-content::after {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  right: -10px;
+  width: 180px;
+  height: 20px;
+  background: rgba(28, 35, 49, 0.8);
+  transform: rotate(-4deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Japan: Editor panel - use normal readable fonts */
+body.theme-japan .input-panel,
+body.theme-japan .input-panel label,
+body.theme-japan .input-panel input,
+body.theme-japan .input-panel select,
+body.theme-japan .input-panel .day-item-name,
+body.theme-japan .input-panel .day-item-date,
+body.theme-japan .input-panel .off-day-toggle span,
+body.theme-japan .header-title h1,
+body.theme-japan .header-title p {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+  letter-spacing: normal;
+  text-transform: none;
+}
