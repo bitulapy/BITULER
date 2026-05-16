@@ -1,9 +1,10 @@
 [
   { "id": "cyberpunk", "label": "Cyberpunk (Bitula)" },
-  { "id": "catppuccin-latte", "label": "Catppuccin Latte" },
+  { "id": "catppuccin-latte", "label": "Catpuccin Latte" },
   { "id": "lunar", "label": "Fortune Teller" },
   { "id": "synthwave", "label": "Synthwave" },
   { "id": "japan", "label": "Brave Red" },
   { "id": "neutral", "label": "Netral Minimalist" },
-  { "id": "cute", "label": "Cute Coquette" }
+  { "id": "cute", "label": "Cute Coquette" },
+  { "id": "crimson", "label": "Crimson" }
 ]

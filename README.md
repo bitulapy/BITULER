@@ -53,11 +53,10 @@ body.theme-synthwave {
   --main-color: #ff2aa3;
   --secondary-color: #ff2aa3;
   --tertiary-color: #e5c890;
-
-  /* Text & UI */
   --text-main: #a6d189;
   --text-muted: #7f8c8d;
   --grid-color: rgba(44, 62, 80, 0.05);
+  --any-color-to-call: #ffff;
 
   /* Typography */
   --font-heading: "Orbitron", sans-serif;
